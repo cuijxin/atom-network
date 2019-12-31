@@ -6,12 +6,12 @@ import (
 
 // +genclient
 // +genclient:noStatus
-// +k8s.deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // Network describes a Network resource
 type Network struct {
 	// TypeMeta is the metadata for the resource, like kind and apiversion
-	metav1.TypeMeta `json:",inline"` // API 元数据
+	metav1.TypeMeta `json:",inline"`
 	// ObjectMeta contains the metadata for the particular object, including
 	// things like...
 	//  - name
@@ -19,7 +19,7 @@ type Network struct {
 	//  - self link
 	//  - labels
 	//  - ... etc ...
-	metav1.ObjectMeta `json:"metadata,omitempty"` // 对象元数据
+	metav1.ObjectMeta `json:"metadata,omitempty"`
 
 	// Spec is the custom resource spec
 	Spec NetworkSpec `json:"spec"`
